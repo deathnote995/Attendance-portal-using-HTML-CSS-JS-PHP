@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    /* background-size: cover; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 10px;
+    border-color: black; */
+    background-color: rgb(27, 27, 27);
+}
+
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: min(450px,95%);
+    height: 500px;
+    /* border: solid 2px blue; */
+    border-radius: 50px;
+    background-color: rgb(27, 27, 27);
+    transition: all 250ms;
+    /* filter: blur(1px); */
+    /* border-color: blue; */
+}
+.loginForm:hover{
+    box-shadow: 0 0 100px 0  rgba(99, 248, 0, 0.993);
+    transform: scale(1.1);
+}
+.inputGroup{
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center;  */
+    position: relative;
+    width: 90%;
+    height: 50px;
+    color: white;
+    /* filter: blur(1px); */
+    /* background-color: burlywood; */
+}
+
+.top_margin{
+    margin-top: 100px;
+}
+
+.inputGroup input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    color:  rgba(99, 248, 0, 0.993);
+    /* border-top: 0;
+    border-left: 0;
+    border-right: 0; */
+    border-bottom: 1px solid white;
+    /* transition: all 500ms; */
+
+}
+.inputGroup label{
+    position: absolute;
+    transition: all 230ms;
+}
+.inputGroup input:hover+label,
+.inputGroup input:focus+label,
+.inputGroup input:valid+label{
+    transform:translateY(-30px) ;
+    color:  #63f800fd;
+    box-shadow: 0 0 20px 0px rgba(99, 248, 0, 0.993);
+    background-color: rgba(49, 134, 0, 0.993);
+}
+.inputGroup input:hover,
+.inputGroup input:focus,
+.inputGroup input:valid{
+    border-bottom: 1px solid  rgba(99, 248, 0, 0.993);
+}
+.inputGroup input:focus{
+    outline: none;
+}
+
+.callForAction{
+    width: 90%;
+    height: 50px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    /* background-color: black; */
+}
+.loginbtn{
+    border: 2px solid ;
+    background-color: transparent;
+    color: white;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    margin-top: 50px;
+    transition: all 230ms;
+}
+.loginbtn:hover{
+    /* scale: 100px; */
+    transform: scale(1.2);
+    box-shadow: 0 0 50px 0px rgba(99, 248, 0, 0.993);
+    color:  rgba(71, 177, 0, 0.993);
+    cursor: pointer;
+    /* border: none; */
+    /* border: 2px solid rgba(164, 247, 109, 0.993); */
+    /* border: 2px solid rgba(52, 139, 2, 0.993); */
+}
+.inactiveColor{
+    background-color: transparent;
+    /* background-color: blue; */
+}
+.activeColor{
+    color:  rgba(71, 177, 0, 0.993);
+    background-color: rgba(164, 247, 109, 0.993);
+}
+

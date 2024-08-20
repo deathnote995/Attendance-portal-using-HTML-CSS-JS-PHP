@@ -1,0 +1,56 @@
+function trylogin()
+{
+    let user = $("#username").val();
+    let pwd = $("#paswd").val();
+    if(user.trim()!=="" && pwd.trim()!=="")
+    {
+        alert("try to connect");
+        //make an Ajax call
+        $.ajax({
+            url:"/PHPATMS/ajaxHandler/ajax.php",
+            type:"POST",
+            dataType:"json",
+            data:{},
+            beforeSend:function(){
+                //if you want to do smoething
+                //just before making the call
+                alert("about to make an ajax call");
+            }, 
+            success:function(rv){
+                //result stored in rv
+                //if ajax call is successful
+                alert(JSON.stringify(rv));	
+            }, 
+            error:function(){
+                //if for some reason ajax call fails
+                alert("oops something went wrong");
+            }, 
+        });
+    }
+}
+
+$(function(e){
+    alert("form loaded successfully");
+});
+$(function(e){
+    //capture the keyup event
+    $(document).on("keyup","input",function(e){
+        let user = $("#username").val();
+        let pwd = $("#paswd").val();
+        if(user.trim()!="" && pwd.trim()!="")
+        {
+            $("#btnlogin").removeClass("inactiveColor");
+            $("#btnlogin").addClass("activeColor");
+        }
+        else
+        {
+            $("#btnlogin").removeClass("activeColor");
+            $("#btnlogin").addClass("inactiveColor");
+        }
+    });
+
+    //capture the click on login button event
+    $(document).on("click","#btnlogin",function(e){
+        trylogin();
+    });
+});
